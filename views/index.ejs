@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Habit Tracker</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <style>
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #f2f2f2;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .flex-container h1, .flex-container h2 {
+      margin: 0;
+    }
+
+    .habit-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 10px;
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .habit-item {
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      padding: 10px;
+      background: linear-gradient(110deg, rgb(237, 115, 135), rgb(251, 205, 121));
+    }
+
+    .habit-item a {
+      text-decoration: none;
+      color: #000;
+      display: inline-block;
+      transition: text-decoration 0.2s;
+    }
+
+    .habit-item a:hover {
+      text-decoration: none;
+      cursor: pointer;
+      background-color: aquamarine;
+      font-weight: bolder;
+    }
+  </style>
+</head>
+<body>
+  <div class="flex-container">
+    <div>
+      <h1 style="color: brown;">Habit Tracking Web Application</h1>
+    </div>
+  </div>
+
+  <h2 style="color: rgb(143, 105, 10);">Welcome, Default User, to the Habit Tracking Application Site for Tracking Daily and Weekly Habits!</h2>
+  <ul class="habit-list">
+    <% habits.forEach(habit => { %>
+      <li class="habit-item">
+        <a href="/habits/<%= habit._id %>"><%= habit.name %></a>
+        <div>
+          <form action="/habits/<%= habit._id %>/update-name" method="post">
+            <input type="text" name="name" placeholder="Edit habit name" required>
+            <button type="submit" style="font-weight: bolder; color: #000; background-color: rgb(240, 150, 165); cursor: pointer;">Edit</button>
+          </form>
+          <form action="/habits/<%= habit._id %>/delete" method="post">
+            <button type="submit" style="font-weight: bolder; color: #000; background-color: rgb(157, 204, 237); cursor: pointer;">Delete</button>
+          </form>
+        </div>
+      </li>
+    <% }); %>
+  </ul>
+
+  <form action="/habits" method="post">
+    <input type="text" name="name" placeholder="Enter habit name" required>
+    <button type="submit" style="font-weight: bolder; color: #000; background-color: pink; cursor: pointer;">Add Habit</button>
+  </form>
+</body>
+</html>
