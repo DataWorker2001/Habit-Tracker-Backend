@@ -8,9 +8,9 @@
 ## Folder Structure:-<br/>
 
 habit-tracking-backend-app<br/>
-├── node_modules/<br/>
 ├── public/<br/>
 │   ├── css/<br/>
+│   │   ├── style.css<br/>
 ├── controllers/<br/>
 │   └── habitController.js<br/>
 ├── models/<br/>
