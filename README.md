@@ -53,4 +53,39 @@ Mongoose <br/>
 #### 1. Clone the repository:- <br/>
 
 ```bash
-git clone https://github.com/your-username/habit-tracker-app.git
+git clone https://github.com/DataWorker2001/Habit-Tracker-Backend
+```
+
+#### 2. Install the dependencies:<br/>
+```bash
+cd habit-tracking-backend-app
+npm install
+```
+
+#### 3. Configure the database connection:<br/>
+In server.js use your own mongoDB username and Password from connection string of MongoDB Campus or Cloud MongoDB to configure the DB connection.
+
+#### 4. Start the application:<br/>
+```bash
+npm start
+```
+
+#### 5. Open your web browser and visit http://localhost:3000 to access the Habit Tracking App.<br/>
+
+## Contributing:<br/>
+#### Contributions are most easily and thankfully welcome! If you'd like to contribute to this project, please follow these steps:<br/>
+1.Fork the repository.<br/>
+2.Create a new branch for your feature/fix.<br/>
+3.Make the necessary changes and commit them.<br/>
+4.Push the changes to your forked repository.<br/>
+5.Submit a pull request explaining the changes you've made.<br/>
+
+## License<br/>
+This project is licensed under the GNU General Public License.<br/>
+
+## Acknowledgements<br/>
+The libraries and resources that you used in the development of this project are Visual Studio Code and MongoDB Cloud database finally with render for deployment.<br/>
+
+## Contact<br/>
+1. Email - arpanchoudhury.iitjee@gmail.com<br/>
+2. Project Link: https://github.com/DataWorker2001/Habit-Tracker-Backend.<br/>
