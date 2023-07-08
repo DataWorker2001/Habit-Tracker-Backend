@@ -8,22 +8,13 @@ const habitRoutes = require('./routes/habitRoutes');
 // Create an instance of the Express app
 const app = express();
 
-// ...
-function generateDatabaseName() {
-  const uniqueId = Math.random().toString(36).substring(2, 15);
-  return `habit_tracker_${uniqueId}`;
-}
-
-
-
-// ...
-
+//Setting EJS as view engine and content rendering and encoding
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 // Connect to the MongoDB database
-mongoose.connect(`mongodb+srv://Arpan2001:Arpan2023@cluster0.hciafyn.mongodb.net/${generateDatabaseName()}`, {
+mongoose.connect(`mongodb+srv://Arpan2001:Arpan2023@cluster0.hciafyn.mongodb.net/final_habits_db`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
