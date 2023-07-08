@@ -4,6 +4,7 @@
   <title>Habit Tracker</title>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <style>
+    /* Styles for flex container */
     .flex-container {
       display: flex;
       justify-content: space-between;
@@ -17,6 +18,7 @@
       margin: 0;
     }
 
+    /* Styles for habit list */
     .habit-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -48,22 +50,29 @@
   </style>
 </head>
 <body>
+  <!-- Flex container for header -->
   <div class="flex-container">
     <div>
       <h1 style="color: brown;">Habit Tracking Web Application</h1>
     </div>
   </div>
 
+  <!-- Welcome message -->
   <h2 style="color: rgb(143, 105, 10);">Welcome, Default User, to the Habit Tracking Application Site for Tracking Daily and Weekly Habits!</h2>
+
+  <!-- Habit list -->
   <ul class="habit-list">
     <% habits.forEach(habit => { %>
       <li class="habit-item">
+        <!-- Link to habit detail page -->
         <a href="/habits/<%= habit._id %>"><%= habit.name %></a>
         <div>
+          <!-- Form to edit habit name -->
           <form action="/habits/<%= habit._id %>/update-name" method="post">
             <input type="text" name="name" placeholder="Edit habit name" required>
             <button type="submit" style="font-weight: bolder; color: #000; background-color: rgb(240, 150, 165); cursor: pointer;">Edit</button>
           </form>
+          <!-- Form to delete habit -->
           <form action="/habits/<%= habit._id %>/delete" method="post">
             <button type="submit" style="font-weight: bolder; color: #000; background-color: rgb(157, 204, 237); cursor: pointer;">Delete</button>
           </form>
@@ -72,6 +81,7 @@
     <% }); %>
   </ul>
 
+  <!-- Form to add a new habit -->
   <form action="/habits" method="post">
     <input type="text" name="name" placeholder="Enter habit name" required>
     <button type="submit" style="font-weight: bolder; color: #000; background-color: pink; cursor: pointer;">Add Habit</button>

@@ -9,17 +9,22 @@ const habitRoutes = require('./routes/habitRoutes');
 const app = express();
 
 // ...
+
+// Function to generate a unique database name
 function generateDatabaseName() {
   const uniqueId = Math.random().toString(36).substring(2, 15);
   return `habit_tracker_${uniqueId}`;
 }
 
-
-
 // ...
 
+// Set the view engine to EJS
 app.set('view engine', 'ejs');
+
+// Serve static files from the 'public' directory
 app.use(express.static('public'));
+
+// Parse incoming request bodies
 app.use(express.urlencoded({ extended: true }));
 
 // Connect to the MongoDB database
@@ -28,12 +33,12 @@ mongoose.connect(`mongodb+srv://Arpan2001:Arpan2023@cluster0.hciafyn.mongodb.net
   useUnifiedTopology: true,
 });
 
-
 // Replace <username> and <password> with your actual MongoDB credentials
 
 // Routes
 app.use('/', habitRoutes);
 
+// Start the server
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });

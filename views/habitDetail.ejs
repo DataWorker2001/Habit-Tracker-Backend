@@ -45,9 +45,10 @@
 </head>
 <body>
   <button onclick="window.location.href = '/';" style="font-weight: bolder; color: #000; background-color: pink; cursor: pointer;">Go Back</button>
-  <h1><%= habit.name %></h1>
+  <h1 style="color: rgba(15, 115, 15, 0.673);"><%= habit.name %></h1>
   <h2>Longest Streak: <%= habit.longestStreak %></h2>
   <h2>Total Days: <%= habit.totalDays %></h2>
+  <h2>Total Done Days: <%= habit.totalDoneDays %></h2> <!-- Added the totalDoneDays display -->
   <form action="/habits/<%= habit._id %>/update-status" method="post">
     <table>
       <thead>
