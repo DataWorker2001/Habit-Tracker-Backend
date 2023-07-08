@@ -34,6 +34,10 @@ const habitSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  totalDoneDays: {
+    type: Number,
+    default: 0,
+  },
 });
 
 habitSchema.methods.updateStreakAndTotalDays = function () {
@@ -41,6 +45,7 @@ habitSchema.methods.updateStreakAndTotalDays = function () {
   let streakCount = 0;
   let maxStreak = 0;
   let totalDays = 0;
+  let totalDoneDays = 0; // New property for tracking total "Done" days
   let prevDate = null;
 
   const today = new Date();
@@ -53,6 +58,7 @@ habitSchema.methods.updateStreakAndTotalDays = function () {
     if (entry.status === 'Done') {
       streakCount = isConsecutiveDay ? streakCount + 1 : 1;
       maxStreak = Math.max(maxStreak, streakCount);
+      totalDoneDays++; // Increment total "Done" days count
     } else {
       streakCount = 0;
     }
@@ -68,7 +74,9 @@ habitSchema.methods.updateStreakAndTotalDays = function () {
 
   this.longestStreak = maxStreak;
   this.totalDays = totalDays;
+  this.totalDoneDays = totalDoneDays; // Assign total "Done" days count to the new property
 };
+
 
 const Habit = mongoose.model('Habit', habitSchema);
 
