@@ -38,7 +38,7 @@ habit-tracking-backend-app<br/>
 5) Toggle the status of habits for the current day or any previous day.<br/>
 6) Store habit data in a database.<br/>
 7) [Bonus Feature] Track the longest streak and the number of days a user completed a habit since its creation.<br/>
-                                           -------------------------x------------------------
+--------------------------------------------------------x------------------------------------------------<br/>
 [8) No Authentication or seperate session of DB used for users. A single shared session limits this app accurate and best usage limit to 1 user on multiple devices, but with more than 1 user the data is disrupted. Multiple users can use it in different time slots or during different times of day or even in different weeks or months, for better segregation and understanding of the user to identify their data. Also if the habits of 2 users are totally different like no similar habits like one possesses all bad habits and other possesses all good habits, then 2 users can use this.<br/>
 9)  In future it will be tried to classify/categorise the user habits as well as classify them daywise (timewise) for a single user first and then for multiple ones.]<br/>
    
