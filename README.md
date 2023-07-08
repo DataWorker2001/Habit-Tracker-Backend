@@ -10,7 +10,7 @@
 habit-tracking-backend-app<br/>
 ├── public/<br/>
 │   ├── css/<br/>
-│   │   ├── style.css<br/>
+│   │   └── style.css<br/>
 ├── controllers/<br/>
 │   └── habitController.js<br/>
 ├── models/<br/>
