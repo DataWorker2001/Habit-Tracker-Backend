@@ -22,7 +22,7 @@ mongoose.connect(`mongodb+srv://Arpan2001:Arpan2023@cluster0.hciafyn.mongodb.net
   useUnifiedTopology: true,
 });
 
-// Replace <username> and <password> with your actual MongoDB credentials
+// Replace <username> here Arpan2001 and <password> here Arpan2023 with your actual MongoDB credentials
 
 // Routes
 app.use('/', habitRoutes);
