@@ -17,7 +17,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 // Connect to the MongoDB database
-mongoose.connect(`mongodb+srv://<username>:<password>@cluster0.hciafyn.mongodb.net/final_habits_db`, {
+mongoose.connect(`mongodb+srv://Arpan2001:Arpan2023@cluster0.hciafyn.mongodb.net/final_habits_db`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
